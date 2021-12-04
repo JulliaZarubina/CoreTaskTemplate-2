@@ -13,8 +13,8 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void createUsersTable() {
-
-        try (Connection connection = Util.getConnection()) {
+/*
+       try (Connection connection = Util.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("CREATE TABLE IF NOT EXISTS users (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(33), lastname VARCHAR(33), age TINYINT)");
             preparedStatement.executeUpdate();
             System.out.println("Таблица создана");
@@ -22,10 +22,11 @@ public class UserDaoJDBCImpl implements UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
     }
 
     public void dropUsersTable() {
-
+/*
         try (Connection connection = Util.getConnection()) {
             DatabaseMetaData dbm = connection.getMetaData();
             ResultSet tables = dbm.getTables(null, null, "users", null);
@@ -40,11 +41,11 @@ public class UserDaoJDBCImpl implements UserDao {
             e.printStackTrace();
         }
         System.out.println("Таблица уничтожена");
-
+*/
     }
 
     public void saveUser(String name, String lastName, byte age) {
-
+/*
         try (Connection connection = Util.getConnection()) {
             DatabaseMetaData dbm = connection.getMetaData();
             ResultSet tables = dbm.getTables(null, null, "users", null);
@@ -63,10 +64,12 @@ public class UserDaoJDBCImpl implements UserDao {
             e.printStackTrace();
         }
         System.out.println("User с именем " + name + " добавлен в базу данных");
+
+ */
     }
 
     public void removeUserById(long id) {
-
+/*
         try (Connection connection = Util.getConnection()) {
             DatabaseMetaData dbm = connection.getMetaData();
             ResultSet tables = dbm.getTables(null, null, "users", null);
@@ -82,10 +85,11 @@ public class UserDaoJDBCImpl implements UserDao {
             e.printStackTrace();
         }
         System.out.println("User уничтожен");
-
+*/
     }
 
     public List<User> getAllUsers() {
+ /*
         List<User> users = new ArrayList<>();
 
         try (Connection connection = Util.getConnection()) {
@@ -111,10 +115,13 @@ public class UserDaoJDBCImpl implements UserDao {
             e.printStackTrace();
         }
         return users;
+
+  */
+        return null;
     }
 
     public void cleanUsersTable() {
-
+/*
         try (Connection connection = Util.getConnection()) {
             DatabaseMetaData dbm = connection.getMetaData();
             ResultSet tables = dbm.getTables(null, null, "users", null);
@@ -129,6 +136,8 @@ public class UserDaoJDBCImpl implements UserDao {
             e.printStackTrace();
         }
         System.out.println("Таблица очищена");
+
+ */
 
     }
 }
