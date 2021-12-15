@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 @Entity
 @Table (name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +22,7 @@ public class User {
 
     @Column(name = "age")
     private Byte age;
+
 
 
     public User(String name, String lastName, Byte age) {
